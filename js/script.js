@@ -419,7 +419,7 @@ function switchTab(tabName) {
 
 function bookService(service) {
   const message = `Hi Samiha, I'm interested in: ${service}`;
-  const whatsappUrl = `https://wa.me/9616723303?text=${encodeURIComponent(message)}`;
+  const whatsappUrl = `https://wa.me/96167623303?text=${encodeURIComponent(message)}`;
   window.open(whatsappUrl, '_blank');
 }
 
