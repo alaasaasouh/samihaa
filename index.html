@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Samiha Zeindine - Certified Life Coach">
+  <title>Samiha Zeindine - Life Coach</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+  <!-- ============================================
+       TOP HEADER BAR
+       ============================================ -->
+  <div class="top-header">
+    <div class="top-header-left">
+      <a href="tel:+9616723303" class="header-link">📞 +961 6 723 303</a>
+      <span class="separator">|</span>
+      <a href="mailto:contact@coaching.com" class="header-link">✉️ contact@coaching.com</a>
+    </div>
+    
+    <div class="top-header-right">
+      <select class="language-selector" id="languageSelect">
+        <option value="en">English</option>
+        <option value="ar">العربية</option>
+        <option value="fr">Français</option>
+      </select>
+      
+      <a href="https://www.google.com" target="_blank" rel="noopener noreferrer" class="social-btn google-btn" title="Google">
+        <span>🔍</span>
+      </a>
+      <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn fb-btn" title="Facebook">
+        <span>f</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ============================================
+       NAVIGATION BAR
+       ============================================ -->
+  <header class="navbar">
+    <div class="navbar-container">
+      <a href="#home" class="navbar-logo">
+        <img src="assets/images/3257d987-dafe-40c9-a636-b7958bc13245.jpg" alt="Logo">
+        <span>COACHING</span>
+      </a>
+      
+      <nav class="navbar-menu">
+        <a href="#about" class="nav-link scroll-link" data-i18n="about">ABOUT</a>
+        <a href="#services" class="nav-link scroll-link" data-i18n="lifeCoaching">LIFE COACHING</a>
+        <a href="#events" class="nav-link scroll-link" data-i18n="events">EVENTS</a>
+        <a href="#courses" class="nav-link scroll-link" data-i18n="courses">COURSES</a>
+        <a href="#blog" class="nav-link scroll-link" data-i18n="blog">BLOG</a>
+        <a href="#contact" class="nav-link scroll-link" data-i18n="contact">CONTACT</a>
+      </nav>
+
+      <button class="menu-toggle" onclick="document.querySelector('.navbar-menu').classList.toggle('active')">☰</button>
+    </div>
+  </header>
+
+  <!-- ============================================
+       MAIN CONTENT
+       ============================================ -->
+  <main>
+    <!-- HERO SLIDER SECTION -->
+    <section class="slider" id="home">
+      <div class="slider__item">
+        <div class="slider__text">
+          <p data-i18n="onlineCoaching">Online Coaching</p>
+          <p data-i18n="getMotivation">Get motivation. Any time. Any place.</p>
+        </div>
+      </div>
+
+      <div class="slider__item">
+        <div class="slider__text">
+          <p data-i18n="transformYourLife">Transform Your Life</p>
+          <p data-i18n="discoverPotential">Discover your true potential</p>
+        </div>
+      </div>
+
+      <div class="slider__item">
+        <div class="slider__text">
+          <p data-i18n="personalGrowth">Personal Growth</p>
+          <p data-i18n="unlockPotential">Unlock your potential and achieve goals</p>
+        </div>
+      </div>
+
+      <div class="slider__arrows">
+        <button class="slider__arrows--left" onclick="sliderPrev()">&#10094;</button>
+        <button class="slider__arrows--right" onclick="sliderNext()">&#10095;</button>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <h2 class="section-title" data-i18n="about">About</h2>
+        <h3 class="section-subtitle" data-i18n="whoIsSamiha">Who is Samiha</h3>
+        
+        <div class="about-content">
+          <div class="about-text animate-fade-in">
+            <p>Samiha Zeindine is an internationally certified life coach with a passion for helping individuals unlock their potential and create meaningful transformations in their lives.</p>
+            <p>With years of experience in personal development, psychology, and coaching methodologies, Samiha specializes in self-discovery, emotional intelligence, body language, and self-love.</p>
+            <button class="btn btn-secondary" onclick="scrollTo('contact')" data-i18n="takeTest">Take your personality test</button>
+          </div>
+          <div class="about-image animate-slide-in-right">
+            <img src="assets/images/3257d987-dafe-40c9-a636-b7958bc13245.jpg" alt="Samiha">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIFE COACHING SECTION -->
+    <section class="section services-section gold-bg" id="services">
+      <div class="container">
+        <h2 class="section-title" data-i18n="lifeCoaching">Life Coaching</h2>
+        <h3 class="section-subtitle" data-i18n="bookServices">Book Services</h3>
+        
+        <div class="service-tabs">
+          <button class="tab-btn active" onclick="switchTab('online')" data-i18n="online">Online</button>
+          <span class="tab-separator">|</span>
+          <button class="tab-btn" onclick="switchTab('inperson')" data-i18n="inPerson">In person</button>
+        </div>
+
+        <div id="online" class="tab-content active">
+          <div class="service-cards">
+            <div class="service-card animate-fade-in" onclick="bookService('Online One-to-One Session')">
+              <div class="card-icon">🎯</div>
+              <h4 data-i18n="oneToOne">One-to-One Session</h4>
+              <p data-i18n="personalizedCoaching">Personalized coaching tailored to your needs</p>
+            </div>
+            <div class="service-card animate-fade-in" onclick="bookService('Online Personality Test')" style="animation-delay: 0.1s;">
+              <div class="card-icon">🧪</div>
+              <h4 data-i18n="personalityTest">Personality Test</h4>
+              <p data-i18n="discoverPersonality">Discover your personality type</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="inperson" class="tab-content">
+          <div class="service-cards">
+            <div class="service-card animate-fade-in" onclick="bookService('In-Person One-to-One Session')">
+              <div class="card-icon">👥</div>
+              <h4 data-i18n="oneToOne">One-to-One Session</h4>
+              <p>In-person coaching for deeper connection</p>
+            </div>
+            <div class="service-card animate-fade-in" onclick="bookService('In-Person Personality Test')" style="animation-delay: 0.1s;">
+              <div class="card-icon">📋</div>
+              <h4 data-i18n="personalityTest">Personality Test</h4>
+              <p>Professional guidance with immediate feedback</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENTS SECTION -->
+    <section class="section events-section" id="events">
+      <div class="container">
+        <h2 class="section-title" data-i18n="events">Events</h2>
+        
+        <div class="events-grid">
+          <div class="event-card animate-slide-in-up" onclick="bookService('Workshop Registration')">
+            <h4 data-i18n="workshop">Workshop</h4>
+            <p data-i18n="selfAwarenessWorkshop">Self-Awareness Workshop</p>
+            <p class="event-date">Nov 5, 2025</p>
+            <button class="btn btn-primary btn-small" data-i18n="registerNow">Register Now</button>
+          </div>
+          <div class="event-card animate-slide-in-up" onclick="bookService('Master Class Registration')" style="animation-delay: 0.1s;">
+            <h4 data-i18n="masterClass">Master Class</h4>
+            <p data-i18n="certifiedLifeCoach">Certified Life Coach Training</p>
+            <p class="event-date">Dec 4-10, 2025</p>
+            <button class="btn btn-primary btn-small" data-i18n="registerNow">Register Now</button>
+          </div>
+        </div>
+
+        <div class="previous-events">
+          <button class="btn btn-outline" onclick="alert('Previous events archive coming soon!')" data-i18n="previousEvents">Previous Events</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- COURSES SECTION -->
+    <section class="section courses-section gold-bg" id="courses">
+      <div class="container">
+        <h2 class="section-title" data-i18n="courses">Courses</h2>
+        
+        <div class="courses-grid">
+          <div class="course-card animate-fade-in" onclick="bookService('Self Discovery Course')">
+            <div class="course-icon">🔍</div>
+            <h4 data-i18n="selfDiscovery">Self Discovery</h4>
+            <p class="course-hours">120h</p>
+            <p>Discover your true self and unlock potential</p>
+          </div>
+          <div class="course-card animate-fade-in" onclick="bookService('Emotional Psychology Course')" style="animation-delay: 0.1s;">
+            <div class="course-icon">💭</div>
+            <h4 data-i18n="emotionalPsychology">Emotional Psychology</h4>
+            <p class="course-hours">5h</p>
+            <p>Master emotional intelligence</p>
+          </div>
+          <div class="course-card animate-fade-in" onclick="bookService('Body Language Course')" style="animation-delay: 0.2s;">
+            <div class="course-icon">🗣️</div>
+            <h4 data-i18n="bodyLanguage">Body Language</h4>
+            <p class="course-hours">8h</p>
+            <p>Learn non-verbal communication</p>
+          </div>
+          <div class="course-card animate-fade-in" onclick="bookService('Self Love Course')" style="animation-delay: 0.3s;">
+            <div class="course-icon">💖</div>
+            <h4 data-i18n="selfLove">Self Love</h4>
+            <p class="course-hours">6h</p>
+            <p>Cultivate self-compassion</p>
+          </div>
+        </div>
+
+        <div class="signin-section">
+          <p><span data-i18n="signIn">Sign in</span> → <span onclick="bookService('Personality Test')" class="clickable" data-i18n="takeTest">(Take your personality test)</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOG SECTION -->
+    <section class="section blog-section" id="blog">
+      <div class="container">
+        <h2 class="section-title" data-i18n="blog">Blog</h2>
+        
+        <div class="blog-grid">
+          <div class="blog-card animate-slide-in-up" onclick="scrollTo('contact')">
+            <div class="blog-image">
+              <img src="assets/images/b18f6219-7cc6-4ef5-8672-18e3da072fb3.jpg" alt="Blog">
+            </div>
+            <div class="blog-content">
+              <h4 data-i18n="thePowerOfSelfDiscovery">The Power of Self-Discovery</h4>
+              <p>Explore how understanding yourself better leads to transformation</p>
+              <p class="read-more">Read More →</p>
+            </div>
+          </div>
+
+          <div class="blog-card animate-slide-in-up" onclick="scrollTo('contact')" style="animation-delay: 0.1s;">
+            <div class="blog-image">
+              <img src="assets/images/3168f41e-5ee7-4928-ab88-d53458df3d12.jpg" alt="Blog">
+            </div>
+            <div class="blog-content">
+              <h4 data-i18n="emotionalIntelligence">Emotional Intelligence in Daily Life</h4>
+              <p>Learn practical techniques to manage emotions and build relationships</p>
+              <p class="read-more">Read More →</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="blog-cta">
+          <p onclick="scrollTo('contact')" class="clickable">Book your one-to-one session to discuss these topics</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section contact-section gold-bg" id="contact">
+      <div class="container">
+        <h2 class="section-title" data-i18n="contact">Contact</h2>
+        
+        <div class="contact-grid">
+          <div class="contact-left animate-slide-in-left">
+            <h4 data-i18n="bookYour">Book your:</h4>
+            <ul>
+              <li onclick="bookService('One-to-One Session')" class="clickable" data-i18n="oneToOne">One-to-One Session</li>
+              <li onclick="bookService('Personality Test')" class="clickable" data-i18n="personalityTest">Personality Test</li>
+            </ul>
+          </div>
+
+          <div class="contact-center">
+            <img src="assets/images/e2e5f132-47d6-4981-86e9-36d887611dcc.jpg" alt="Certified Life Coach">
+          </div>
+
+          <div class="contact-right animate-slide-in-right">
+            <h4 data-i18n="moreInfo">More Info:</h4>
+            <ul>
+              <li onclick="scrollTo('services')" class="clickable" data-i18n="aboutServices">About Services</li>
+              <li onclick="scrollTo('courses')" class="clickable" data-i18n="courseDetails">Course Details</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="contact-whatsapp">
+          <a href="https://wa.me/9616723303" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-i18n="contactOnWhatsApp">📱 Contact on WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>Samiha Zeindine</h4>
+        <p>Certified Life Coach</p>
+        <p class="tagline">Transform Your Life Today</p>
+      </div>
+
+      <div class="footer-section">
+        <h4 data-i18n="quickLinks">Quick Links</h4>
+        <ul>
+          <li><a href="#about" class="scroll-link" data-i18n="about">About</a></li>
+          <li><a href="#services" class="scroll-link" data-i18n="lifeCoaching">Services</a></li>
+          <li><a href="#events" class="scroll-link" data-i18n="events">Events</a></li>
+          <li><a href="#courses" class="scroll-link" data-i18n="courses">Courses</a></li>
+          <li><a href="#blog" class="scroll-link" data-i18n="blog">Blog</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4 data-i18n="contactInfo">Contact Info</h4>
+        <p><a href="tel:+9616723303">📞 +961 6 723 303</a></p>
+        <p><a href="mailto:contact@coaching.com">✉️ contact@coaching.com</a></p>
+        <p><a href="https://wa.me/9616723303" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a></p>
+      </div>
+
+      <div class="footer-section">
+        <h4 data-i18n="followUs">Follow Us</h4>
+        <div class="social-links">
+          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">f</a>
+          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">📷</a>
+          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">in</a>
+          <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">▶</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Samiha Zeindine. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#" onclick="alert('Privacy Policy coming soon!')">Privacy Policy</a>
+        <a href="#" onclick="alert('Terms of Service coming soon!')">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
